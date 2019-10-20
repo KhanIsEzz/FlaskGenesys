@@ -23,6 +23,11 @@ def my_form_post():
     wut = jsonResponse['results'][0]
     restaurants = wut['faq']['answer']
     print(restaurants)
+# get user review and rate it using api
+# Upload user review to data base with rating
+# Quick sort to generate relavant results
+
+#def 
 
 if __name__ == '__main__':
     app.run(debug=True)
