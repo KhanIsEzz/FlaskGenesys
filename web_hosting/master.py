@@ -16,11 +16,6 @@ results = jsonResponse['results'][0]
 restaurants = results['faq']['answer']
 print(restaurants)
 
-#if it's not a rating based question:
-if (restaurants[0] == 'g'):
-	
-#
-
 #get best customer reviews
 
 #update client view

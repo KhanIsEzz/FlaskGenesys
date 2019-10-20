@@ -56,7 +56,7 @@ ROOT_URLCONF = 'WebApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [Temp_Path+"/EVAHUB"],
+        'DIRS': ["/home/alex/Hackathon/HackathonGenesys/web_hosting/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
