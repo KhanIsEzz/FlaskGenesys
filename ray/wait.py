@@ -2,6 +2,7 @@
 question = '"Whats the best restaurant in Toronto?"'
 
 #get answer
+#generate token
 import requests
 URL = "https://api.genesysappliedresearch.com/v2/knowledge/generatetoken"
 response = requests.post(url = URL, headers={'Accept':'*/*','cache-control':'no-cache','organizationid':'be64cce3-44f8-4cd5-9e12-dbfed265165c','secretkey':'0845a386-ab66-4fe8-a1cb-56ef34a3b658'})
@@ -12,8 +13,13 @@ DATA = '{"query":'+question+',"pageSize": 1,"pageNumber": 1,"sortOrder": "string
 response = requests.post(url = 'https://api.genesysappliedresearch.com/v2/knowledge/knowledgebases/7613d1f7-09a7-41f5-a0ba-94f7f6d91d2f/search', data = DATA, headers = {'token':token,'accept':'application/json','Content-Type':'application/json','organizationid':'be64cce3-44f8-4cd5-9e12-dbfed265165c'})
 jsonResponse = response.json()
 print(jsonResponse)
-print(DATA)
+results = jsonResponse['results'][0]
+restaurants = results['faq']['answer']
 
 #get best customer reviews
+for restaurant in restaurants.split(','):
+	restaurant = restaurant.split(':')
+	name = restaurant[0]
+	print(name)
 
 #update client view
